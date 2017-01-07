@@ -1,5 +1,7 @@
 package com.kejian.mike.opengles_example.gameOfLife;
 
+import android.view.View;
+
 import com.kejian.mike.opengles_example.MyRender;
 import com.kejian.mike.opengles_example.shape.Shape;
 import com.kejian.mike.opengles_example.shape.Square;
@@ -18,6 +20,7 @@ public class Controller {
 
     public float[] squareColor = {1f,1f,1f,1f};
     public float[] backColor = {0.5f,0.5f,1f,1f};
+    public int times = 0;
 
 
     public Controller(){
@@ -49,6 +52,7 @@ public class Controller {
                 }
             }
         }
+        times++;
         myRender.setShapeList(list);
     }
 
@@ -123,7 +127,7 @@ public class Controller {
             }
 
             try {
-                Thread.sleep(200);
+                Thread.sleep(1000);
             }catch (Exception e){
                 e.printStackTrace();
             }
